@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/animate.css" />
+    <link rel="stylesheet" href="/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/profile/profile.css" />
+    <script src="/bootstrap.js"></script>
+    <script src="/sweetalert.js"></script>
+    <title>Profile</title>
+    <style>
+        @media print{
+            .no-print{
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar no-print navbar-expand-lg navbar-light bg-light justify-between">
+        <img src="/assets/logo.png" class="nav-logo" />
+        <div class="container-fluid">
+            <a class="navbar-brand text-white mx-4" href="#">Hotel Managment SoftWare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <div class="input-group">
+                        <input type="search" class="search-input form-control"
+                            placeholder="Search by Name,Location,Room No,Mobile No.,checkindate...." />
+                        <span class="input-group-text text-white fw-bold btn">Search</span>
+                    </div>
+                    <button class="button2">Log Out</button>
+                    <span class="userdisplay"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="item-container col-md-6">
+                <ul class="nav no-print nav-tabs">
+                    <li class="nav-item">
+                        <a href="#booking" class="nav-link active" data-bs-toggle="tab">Booking</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#inhouse" class="nav-link" data-bs-toggle="tab">In House</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#archive" class="nav-link " data-bs-toggle="tab">Archive</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#cashier" class="nav-link cashier-button " data-bs-toggle="tab">Cashier</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <!-- -----------------------------From Here This is booking part-------------------------------------------- -->
+                    <div class="tab-pane  search-pane container mt-3 active" id="booking">
+                        <div class="button-container no-print">
+                            <div>
+                                <button class="buttonX action-btn register-button " data-bs-toggle="modal"
+                                    data-bs-target="#registration-modal">Register</button>
+                            </div>
+                            <div>
+                                <button class="buttonX print action-btn">Print</button>
+                            </div>
+                            <div>
+                                <button class="buttonX total-button action-btn"></button>
+                            </div>
+                        </div>
+                        <div class="data table-responsive">
+                            <h1 class="my-4 heading">All Booking Data</h1>
+                            <table class="table table-striped">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th class="no-print">Serial No</th>
+                                        <th>Location</th>
+                                        <th>Room No</th>
+                                        <th>Fullname</th>
+                                        <th>Check IN</th>
+                                        <th>Check Out</th>
+                                        <th>Total People</th>
+                                        <th>Mobile No</th>
+                                        <th>Price</th>
+                                        <th>Notice</th>
+                                        <th class="no-print">Registered At</th>
+                                        <th class="no-print">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="bookinglist text-center">
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <button class="edit-btn btn btn-primary">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button class="checkin-btn btn btn-primary">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button class=" btn btn-primary trash-btn">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row py-5 show-booking-room">
+                            
+                        </div>
+                    </div>
+                    <!------------------------ from here  it is inhouse html code ---------------------------->
+                    <div class="tab-pane search-pane container mt-3" id="inhouse">
+                        <div class="button-container">
+                            <div>
+                                <button class="buttonX no-print action-btn inhouse-button " data-bs-toggle="modal"
+                                    data-bs-target="#inhouse-modal">Inhouse</button>
+                            </div>
+                            <div>
+                                <button class="buttonX no-print print action-btn">Print</button>
+                            </div>
+                            <div>
+                                <button class="buttonX total-button no-print action-btn"></button>
+                            </div>
+                        </div>
+                        <div class="data">
+                            <h1 class="my-4">All Inhouse Data</h1>
+                            <table class="table table-responsive table-striped">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th>Serial No</th>
+                                        <th>Location</th>
+                                        <th>Room No</th>
+                                        <th>Fullname</th>
+                                        <th>Check IN</th>
+                                        <th>Check Out</th>
+                                        <th>Total People</th>
+                                        <th>Mobile No</th>
+                                        <th>Price</th>
+                                        <th>Notice</th>
+                                        <th>Registered At</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="inhouselist text-center">
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <button class="edit-btn btn btn-primary">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button class="checkin-btn btn btn-primary">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button class=" btn btn-primary trash-btn">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="row py-5 show-inhouse-room">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------ from here  it is archive html code ---------------------------->
+                    <div class="tab-pane search-pane container mt-3" id="archive">
+                        <div class="button-container ">
+                            <div>
+                                <button class="buttonX no-print print action-btn">Print</button>
+                            </div>
+                            <div>
+                                <button class="buttonX no-print total-button action-btn"></button>
+                            </div>
+                        </div>
+                        <div class="data">
+                            <h1 class="my-4">All Archive Data</h1>
+                            <table class="table table-striped">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th class="no-print">Serial No</th>
+                                        <th>Location</th>
+                                        <th>Room No</th>
+                                        <th>Fullname</th>
+                                        <th>Check IN</th>
+                                        <th>Check Out</th>
+                                        <th>Total People</th>
+                                        <th>Mobile No</th>
+                                        <th>Price</th>
+                                        <th>Notice</th>
+                                        <th class="no-print">Registered At</th>
+                                        <th class="no-print">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="archivelist text-center">
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>
+                                            <button class="edit-btn btn btn-primary">
+                                                <i class="fa fa-edit"></i>
+                                            </button>
+                                            <button class="checkin-btn btn btn-primary">
+                                                <i class="fa fa-check"></i>
+                                            </button>
+                                            <button class=" btn btn-primary trash-btn">
+                                                <i class="fa fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- -----------------------Here is cashier HTML code----------------------------------- search-pane-->
+                    <div class="tab-pane container mt-3" id="cashier">
+                        <div class="data">
+                            <h1 class="my-4">All Cashier Data</h1>
+                            <table class="table table-striped">
+                                <thead class="text-center">
+                                    <tr>
+                                        <th>Serial No</th>
+                                        <th>Room No</th>
+                                        <th>Amount</th>
+                                        <th>Cashier</th>
+                                        <th>Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="cashier-list text-center">
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="d-flex justify-content-between text-center" style="border-bottom: none;">
+                                <h1>Total</h1>
+                                <h1 class="money"></h1>
+                            </div>
+                        </div>
+                        <div class="button-container">
+                            <div>
+                                <button class="buttonX no-print cash-button action-btn" data-bs-toggle="modal"
+                                    data-bs-target="#cashier-modal">Add Cash</button>
+                            </div>
+                            <div>
+                                <button class="buttonX no-print close-cashier action-btn">close Cashier</button>
+                            </div>
+                            <div>
+                                <button class="buttonX no-print print action-btn">Print</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- this is a model written to register the data into the booking -->
+    <div class="modal animate__animated animate__zoomIn" id="registration-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="registration-heading">Registration Form</h4>
+                    <button type="button" class="btn-close registration-close " data-bs-dismiss="modal"
+                        aria-label="close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <form class="booking-form">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <input required name="fullname" type="text" class="form-control mb-3"
+                                    placeholder="Fullname">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="location" type="text" class="form-control mb-3" placeholder="Location">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input required name="roomno" type="number" class="form-control mb-3"
+                                    placeholder="Room No">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="totalpeople" type="number" class="form-control mb-3"
+                                    placeholder="Total People">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Checkin date</label>
+                                <input name="checkindate" type="date" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Checkout date</label>
+                                <input name="checkoutdate" type="date" class="form-control mb-3">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input name="Price" type="number" class="form-control mb-3" placeholder="Price">
+                            </div>
+                            <div class="col-md-6">
+                                <input required name="mobileno" type="number" class="form-control mb-3"
+                                    placeholder="Mobile No">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <textarea name="Notice" class="form-control" placeholder="Notice"></textarea>
+                        </div>
+                        <div class="rowx">
+                            <button type="submit" class="buttonY" id="registerbutton">Register</button>
+                            <button type="button" class="buttonY" id="updatebutton">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- this is our second modal for the inhouse part  -->
+    <div class="modal animate__animated animate__zoomIn" id="inhouse-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="registration-heading">Inhouse Form</h4>
+                    <button type="button" class="btn-close registration-close " data-bs-dismiss="modal"
+                        aria-label="close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <form class="inhouse-form">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <input required name="fullname" type="text" class="form-control mb-3"
+                                    placeholder="Fullname">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="location" type="text" class="form-control mb-3" placeholder="Location">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input required name="roomno" type="number" class="form-control mb-3"
+                                    placeholder="Room No">
+                            </div>
+                            <div class="col-md-6">
+                                <input name="totalpeople" type="number" class="form-control mb-3"
+                                    placeholder="Total People">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Checkin date</label>
+                                <input name="checkindate" type="date" class="form-control mb-3">
+                            </div>
+                            <div class="col-md-6">
+                                <label>Checkout date</label>
+                                <input name="checkoutdate" type="date" class="form-control mb-3">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input name="Price" type="number" class="form-control mb-3" placeholder="Price">
+                            </div>
+                            <div class="col-md-6">
+                                <input required name="mobileno" type="number" class="form-control mb-3"
+                                    placeholder="Mobile No">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <textarea name="Notice" class="form-control" placeholder="Notice"></textarea>
+                        </div>
+                        <div class="rowx">
+                            <button type="submit" class="buttonY" id="registerbutton">Register</button>
+                            <button type="button" class="buttonY" id="updatebutton">Update</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- this is our third modal for the inhouse part  -->
+    <div class="modal animate__animated animate__zoomIn" id="cashier-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="registration-heading">Cashier Form</h4>
+                    <button type="button" class="btn-close registration-close " data-bs-dismiss="modal"
+                        aria-label="close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <form class="cashier-form">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <input required name="Amount" type="number" class="form-control mb-3"
+                                    placeholder="Amount">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input required name="roomno" type="number" class="form-control mb-3"
+                                    placeholder="Room No">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input name="cashiername" type="text" placeholder="Cashier Name"
+                                    class="form-control mb-3">
+                            </div>
+                        </div>
+                        <div class="rowx">
+                            <button type="submit" class="buttonY" id="registerbutton">Register</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- this is a model for csh archive model-->
+    <div class="modal animate__animated animate__zoomIn" id="cashier-archive-modal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close registration-close " data-bs-dismiss="modal"
+                        aria-label="close"></button>
+                </div>
+                <div class="body-body p-4">
+                    <div class="data table-responsive">
+                        <h1 class="w-100">All Cashier Data</h1>
+                        <table class="table table-striped">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>Serial No</th>
+                                    <th>Cashier</th>
+                                    <th>Date/Time</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cashier-archive-list text-center">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="d-flex justify-content-between text-center" style="border-bottom: none;">
+                            <h1>Total</h1>
+                            <h1 class="archive-money"></h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="profile.js"></script>
+</body>
+
+</html>
